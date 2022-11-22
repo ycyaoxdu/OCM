@@ -15,14 +15,12 @@ $ make image
 
 Set environment variables firstly and then deploy controlplane.
 * `HUB_NAME` (optional) is the namespace where the controlplane is deployed in. The default is `ocm-controlplane`.
-* `HOST_POSTFIX` (required) is the rouute domain of the OCP.And the format of API server of controlplane is `ocm-controlplane-${HUB_NAME}.${HOST_POSTFIX}`. 
 * `IMAGE_NAME` (optional) is the customized image which can override the default image `quay.io/open-cluster-management/controlplane:latest`.
 
 For example: 
 
     ```bash
     $ export HUB_NAME=<hub name>
-    $ export HOST_POSTFIX=<your ocp cluster route domain>
     $ export IMAGE_NAME=<your image>
     $ make deploy
     ```
@@ -69,7 +67,6 @@ $ make destory
 
 ```bash
 $ export HUB_NAME=<hub name>
-$ export HOST_POSTFIX=<your ocp cluster route domain>
 $ export IMAGE_NAME=<your image>
 $ make deploy-all
 ```
