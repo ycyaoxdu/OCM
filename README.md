@@ -24,7 +24,7 @@ There are a number of key use cases that are enabled by this project, and are ca
 OCM has a group of [APIs](https://github.com/open-cluster-management-io/api) to provide the foundational functions
 in multiple cluster management.
 
-The journey of cluster management starts with [Cluster Registration](https://github.com/open-cluster-management-io/registration) which follows a `double opt-in` protocol to establish a MTLS connection from the agent on the managed cluster (Klusterlet) to the hub (Cluster Manager). After this, users or operands on the hub can declare [ManifestWorks](https://github.com/open-cluster-management-io/work) which contains a slice of Kubernetes resource manifests to be distributed and applied to a certain managed cluster. To schedule workloads to a certain set of clusters, users can also declare a [Placement](https://github.com/open-cluster-management-io/placement) on the hub to dynamically select a set of clusters with certain criteria.
+The journey of cluster management starts with [Cluster Registration](https://open-cluster-management.io/concepts/architecture/#cluster-registering-double-opt-in-handshaking) which follows a `double opt-in` protocol to establish a MTLS connection from the agent on the managed cluster (Klusterlet) to the hub (Cluster Manager). After this, users or operands on the hub can declare [ManifestWorks](https://open-cluster-management.io/concepts/manifestwork/) which contains a slice of Kubernetes resource manifests to be distributed and applied to a certain managed cluster. To schedule workloads to a certain set of clusters, users can also declare a [Placement](https://open-cluster-management.io/concepts/placement/) on the hub to dynamically select a set of clusters with certain criteria.
 
 In addition, developers can leverage [Addon framework](https://github.com/open-cluster-management-io/addon-framework) to build their own management tools or integrate with other open source projects to extend the multicluster management capability. OCM maintaines two built-in addons for application lifecycle and security governance.
 
@@ -42,14 +42,11 @@ to install application manager addon in OCM and deploy helm charts in multiple c
 
 Policy controllers allow the declarative expression of a desired condition that can be audited or enforced against a set of managed clusters. _Policies_ allow you to drive cross-cluster configuration or validate that a certain configuration explicitly does not exist.
 
-
 The following repositories describe the underlying API and controllers for the GRC model:
 
-* https://github.com/open-cluster-management-io/config-policy-controller
-* https://github.com/open-cluster-management-io/governance-policy-status-sync
-* https://github.com/open-cluster-management-io/governance-policy-spec-sync
-* https://github.com/open-cluster-management-io/governance-policy-template-sync
-* https://github.com/open-cluster-management-io/governance-policy-propagator
+* [config-policy-controller](https://github.com/open-cluster-management-io/config-policy-controller)
+* [governance-policy-framework-addon](https://github.com/open-cluster-management-io/governance-policy-framework-addon)
+* [governance-policy-propagator](https://github.com/open-cluster-management-io/governance-policy-propagator)
 
 ### More external integrations
 
